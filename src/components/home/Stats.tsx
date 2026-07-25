@@ -17,7 +17,7 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel rounded-2xl p-4 sm:p-6 text-center hover:border-brand-primary/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(91,91,255,0.08)] flex flex-col justify-center"
+              className="glass-panel rounded-2xl p-4 sm:p-6 text-center hover:border-brand-primary/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(91,91,255,0.08)] flex flex-col justify-center last:col-span-2 sm:last:col-span-1"
             >
               <span className="font-sans text-3xl sm:text-4xl xl:text-5xl font-extrabold bg-gradient-to-r from-white via-white to-brand-primary bg-clip-text text-transparent mb-2">
                 {stat.value}

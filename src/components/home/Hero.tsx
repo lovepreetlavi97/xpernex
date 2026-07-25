@@ -66,7 +66,7 @@ export default function Hero() {
           >
             <Link href="/contact" className="focus-visible:outline-none rounded-full w-full sm:w-auto">
               <motion.div
-                className="relative h-[56px] min-w-[240px] px-10 inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-full text-base font-bold text-white uppercase tracking-[0.06em] whitespace-nowrap group cursor-pointer"
+                className="relative h-[56px] w-full sm:w-auto sm:min-w-[240px] px-6 sm:px-10 inline-flex items-center justify-center gap-3.5 overflow-hidden rounded-full text-base font-bold text-white uppercase tracking-[0.06em] whitespace-nowrap group cursor-pointer"
                 style={{
                   background: "linear-gradient(135deg, #5B5BFF 0%, #8B5CF6 100%)",
                 }}
@@ -115,7 +115,7 @@ export default function Hero() {
 
             <Link href="/services" className="focus-visible:outline-none rounded-full w-full sm:w-auto">
               <motion.div
-                className="relative h-[56px] min-w-[240px] px-10 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full text-base font-semibold text-white uppercase tracking-[0.06em] whitespace-nowrap border border-white/10 bg-white/5 backdrop-blur-md transition-colors duration-300 group cursor-pointer"
+                className="relative h-[56px] w-full sm:w-auto sm:min-w-[240px] px-6 sm:px-10 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full text-base font-semibold text-white uppercase tracking-[0.06em] whitespace-nowrap border border-white/10 bg-white/5 backdrop-blur-md transition-colors duration-300 group cursor-pointer"
                 whileHover={{
                   y: -2,
                   scale: 1.02,
