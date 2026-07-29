@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import LogoMarquee from "@/components/home/LogoMarquee";
 import Stats from "@/components/home/Stats";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import ScrollTextReveal from "@/components/home/ScrollTextReveal";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <div className="relative w-full overflow-hidden">
       <Hero />
+      <LogoMarquee />
       <Stats />
       <ServicesPreview />
       

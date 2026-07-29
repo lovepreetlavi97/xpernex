@@ -111,7 +111,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/devops" className="text-sm text-brand-muted hover:text-white transition-colors duration-200">
+                <Link href="/services/cloud-solutions" className="text-sm text-brand-muted hover:text-white transition-colors duration-200">
                   Cloud Infrastructure
                 </Link>
               </li>

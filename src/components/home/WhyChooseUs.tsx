@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 bg-brand-dark/20">
+    <section className="relative pt-16 pb-12 md:py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 bg-brand-dark/20">
       {/* Grid Pattern */}
       <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 

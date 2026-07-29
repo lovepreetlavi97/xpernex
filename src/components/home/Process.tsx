@@ -49,7 +49,7 @@ const PROCESS_STEPS = [
 
 export default function Process() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40">
+    <section className="relative py-16 md:py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40">
       <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 
       <div className="mx-auto max-w-5xl relative z-10">

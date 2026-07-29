@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function ContactCallout() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative py-16 md:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Mesh Glow Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[600px] w-[600px] rounded-full bg-brand-primary/10 blur-[130px] opacity-70 pointer-events-none" />
 

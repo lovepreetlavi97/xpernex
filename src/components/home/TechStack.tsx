@@ -32,7 +32,7 @@ const STACK_CATEGORIES = [
 
 export default function TechStack() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 bg-brand-dark/30">
+    <section className="relative pt-12 pb-16 md:py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 bg-brand-dark/30">
       <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl relative z-10">

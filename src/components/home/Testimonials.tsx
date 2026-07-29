@@ -40,7 +40,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 overflow-hidden">
+    <section className="relative py-16 md:py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 overflow-hidden">
       <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 
       {/* Background Soft Lights */}

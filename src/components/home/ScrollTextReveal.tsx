@@ -39,7 +39,7 @@ export default function ScrollTextReveal({
   const words = paragraph.split(" ");
 
   return (
-    <section ref={containerRef} className="relative py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 overflow-hidden">
+    <section ref={containerRef} className="relative py-16 md:py-28 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 overflow-hidden">
       {/* Background glowing gradients */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[500px] w-[500px] rounded-full bg-brand-primary/5 blur-[140px] pointer-events-none" />
 

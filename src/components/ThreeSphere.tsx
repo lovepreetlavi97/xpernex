@@ -87,9 +87,16 @@ function SphereWireframe() {
 
 export default function ThreeSphere() {
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   if (!mounted) {
@@ -105,15 +112,17 @@ export default function ThreeSphere() {
   }
 
   return (
-    <div className="w-full h-full relative" style={{ minHeight: "450px" }}>
+    <div className="w-full h-full relative min-h-[220px] sm:min-h-[450px]">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }} gl={{ antialias: true }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1.5} />
-        <SphereParticles />
-        <SphereWireframe />
+        <group scale={isMobile ? 0.85 : 1}>
+          <SphereParticles />
+          <SphereWireframe />
+        </group>
       </Canvas>
       {/* Visual background lights behind the canvas */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-72 rounded-full bg-brand-secondary/10 blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-36 w-36 sm:h-72 sm:w-72 rounded-full bg-brand-secondary/10 blur-[60px] sm:blur-[80px] pointer-events-none" />
     </div>
   );
 }

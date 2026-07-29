@@ -20,7 +20,7 @@ export default function ServicesPreview() {
   };
 
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 bg-brand-dark/30">
+    <section className="relative pt-10 pb-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40 bg-brand-dark/30">
       {/* Background Lights */}
       <div className="absolute top-[30%] right-[-10%] -z-10 h-[400px] w-[400px] rounded-full bg-brand-primary/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-10%] -z-10 h-[400px] w-[400px] rounded-full bg-brand-secondary/5 blur-[120px] pointer-events-none" />

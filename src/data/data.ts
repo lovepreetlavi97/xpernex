@@ -414,28 +414,7 @@ export const projectsData: Project[] = [
     technologies: ["Next.js", "Go", "Kafka", "TimescaleDB", "TensorFlow", "React Three Fiber"],
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
   },
-  {
-    slug: "healthflow-hospital-management",
-    title: "HealthFlow: Connected Clinical Network",
-    client: "HealthFlow Solutions",
-    description: "An enterprise-grade, HIPAA-compliant patient management system interconnecting 40+ clinics with biometric lookup and automated triage AI.",
-    category: "Enterprise Software",
-    industry: "Healthcare",
-    metrics: [
-      { label: "Patient Admission Time", value: "-70%" },
-      { label: "HIPAA Compliance Score", value: "100%" },
-      { label: "Active Clinics", value: "42" }
-    ],
-    challenge: "Physicians and administrators spent hours manually copying patient records between legacy clinics. Patient charts were frequently incomplete, leading to clinical delays, potential prescription conflicts, and security liabilities.",
-    solution: "We engineered a secure, multi-tenant clinical application on AWS using AWS ECS, DynamoDB, and Cognito for zero-trust authorization. We built an AI triage engine that extracts scan and laboratory reports using OCR, classifying emergency severity levels automatically.",
-    results: [
-      "Unified patient records across 42 hospitals, cutting record retrieval times from minutes to seconds.",
-      "Reduced triage delays, saving vital response minutes in critical care settings.",
-      "Passed security compliance audits with high rankings."
-    ],
-    technologies: ["React Native", "Next.js", "NestJS", "PostgreSQL", "AWS ECS", "Cognito", "OpenAI API"],
-    image: "https://images.unsplash.com/photo-1504813184591-015578c78d5f?q=80&w=1200&auto=format&fit=crop"
-  },
+
   {
     slug: "apex-logistics-fleet-optimization",
     title: "Apex: Global Logistics Coordinator",
@@ -756,9 +735,6 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const statsData = [
-  { label: "Projects Delivered", value: "140+" },
-  { label: "Countries Served", value: "24" },
-  { label: "Client Satisfaction", value: "99.8%" },
-  { label: "Years Experience", value: "8+" },
-  { label: "Technologies", value: "25+" }
+  { label: "Years of Industry Experience", value: "6+" },
+  { label: "Custom Mobile App Delivered", value: "30+" }
 ];

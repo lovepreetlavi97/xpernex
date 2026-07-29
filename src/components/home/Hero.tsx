@@ -8,7 +8,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40">
+    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-16 pb-6 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32 px-4 sm:px-6 lg:px-8 border-b border-brand-border/40">
       {/* Background Neural Particles */}
       <ParticleBackground />
 
@@ -136,11 +136,11 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="lg:col-span-5 w-full h-[400px] sm:h-[500px] flex items-center justify-center relative z-10"
+          className="lg:col-span-5 w-full h-[220px] sm:h-[500px] flex items-center justify-center relative z-10"
         >
           {/* Subtle Outer Glowing Ring behind Canvas */}
-          <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full border border-brand-primary/10 animate-pulse-slow opacity-60" />
-          <div className="absolute h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] rounded-full border border-brand-secondary/5 animate-pulse opacity-40" />
+          <div className="absolute h-[180px] w-[180px] sm:h-[400px] sm:w-[400px] rounded-full border border-brand-primary/10 animate-pulse-slow opacity-60" />
+          <div className="absolute h-[130px] w-[130px] sm:h-[300px] sm:w-[300px] rounded-full border border-brand-secondary/5 animate-pulse opacity-40" />
 
           <ThreeSphere />
         </motion.div>
