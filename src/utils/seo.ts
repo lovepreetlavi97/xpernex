@@ -93,7 +93,7 @@ export function getOrgSchemaJsonLd() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-800-555-0199",
+      "telephone": "+91-98764-67697",
       "contactType": "customer service",
       "email": "hello@xpernex.com",
       "availableLanguage": "English"

@@ -4,12 +4,19 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Check, Loader2, Sparkles, Send } from "lucide-react";
 import confetti from "canvas-confetti";
 
+const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.89 12.04 8.02 12.21C8.14 12.38 9.75 14.86 12.21 15.93C14.26 16.81 14.68 16.64 15.12 16.6C15.56 16.56 16.54 16.02 16.74 15.45C16.95 14.88 16.95 14.39 16.89 14.28C16.83 14.18 16.67 14.12 16.42 14C16.18 13.88 14.98 13.29 14.76 13.21C14.53 13.13 14.37 13.09 14.21 13.33C14.04 13.58 13.57 14.12 13.43 14.28C13.28 14.45 13.14 14.47 12.9 14.35C12.65 14.23 11.87 13.97 10.94 13.14C10.22 12.5 9.73 11.71 9.59 11.46C9.45 11.22 9.57 11.08 9.7 10.96C9.81 10.85 9.94 10.67 10.07 10.53C10.2 10.38 10.24 10.28 10.32 10.12C10.4 9.95 10.36 9.81 10.3 9.68C10.24 9.56 9.75 8.35 9.54 7.86C9.35 7.37 9.15 7.44 9 7.43C8.85 7.43 8.69 7.33 8.53 7.33Z" />
+  </svg>
+);
+
 export default function ContactPage() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [lastWhatsAppUrl, setLastWhatsAppUrl] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,22 +27,41 @@ export default function ContactPage() {
 
     setStatus("loading");
 
-    // Simulate API call
-    setTimeout(() => {
-      setStatus("success");
-      setFullName("");
-      setEmail("");
-      setCompany("");
-      setMessage("");
+    // Format professional WhatsApp query message
+    const lines = [
+      "👋 *New Project Inquiry from Xpernex Website*",
+      "",
+      `👤 *Client Name:* ${fullName.trim()}`,
+      `📧 *Email:* ${email.trim()}`,
+      company.trim() ? `🏢 *Company:* ${company.trim()}` : "",
+      "",
+      "💬 *Project Scope & Details:*",
+      message.trim(),
+      "",
+      "---",
+      "Sent via Xpernex Contact Portal"
+    ].filter(Boolean);
 
-      // Trigger Confetti for premium WOW effect
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ["#5B5BFF", "#00F5D4", "#8B5CF6"]
-      });
-    }, 1500);
+    const waText = lines.join("\n");
+    const waUrl = `https://wa.me/919876467697?text=${encodeURIComponent(waText)}`;
+    setLastWhatsAppUrl(waUrl);
+
+    // Open WhatsApp directly in new window
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+
+    setStatus("success");
+    setFullName("");
+    setEmail("");
+    setCompany("");
+    setMessage("");
+
+    // Trigger Confetti for premium WOW effect
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#5B5BFF", "#00F5D4", "#8B5CF6"]
+    });
   };
 
   return (
@@ -87,18 +113,29 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Phone */}
+              {/* Phone & WhatsApp */}
               <div className="flex gap-4 items-start">
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 text-brand-primary flex-shrink-0">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
                   <span className="block text-xs font-semibold text-brand-muted uppercase tracking-wider mb-1">
-                    Operations Center
+                    Direct Contact / WhatsApp
                   </span>
-                  <a href="tel:+18005550199" className="text-white text-base font-bold hover:text-brand-secondary transition-colors duration-200">
-                    +1 (800) 555-0199
-                  </a>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a href="tel:+919876467697" className="text-white text-base font-bold hover:text-brand-secondary transition-colors duration-200">
+                      +91 98764 67697
+                    </a>
+                    <a
+                      href="https://wa.me/919876467697"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500/15 border border-emerald-500/35 text-emerald-400 hover:bg-emerald-500/25 transition-all duration-200 hover:scale-[1.02]"
+                    >
+                      <WhatsAppIcon className="h-3.5 w-3.5" />
+                      <span>Chat on WhatsApp</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -145,19 +182,32 @@ export default function ContactPage() {
 
               {status === "success" ? (
                 <div className="text-center py-16">
-                  <div className="h-16 w-16 bg-brand-secondary/10 border border-brand-secondary/35 text-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="h-16 w-16 bg-emerald-500/10 border border-emerald-500/35 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Check className="h-8 w-8" />
                   </div>
-                  <h3 className="font-sans text-2xl font-bold text-white mb-2">Message Dispatched</h3>
-                  <p className="text-brand-muted text-sm leading-relaxed max-w-sm mx-auto mb-8">
-                    Your request was successfully uploaded. An engineering director will connect with you via email within one business day.
+                  <h3 className="font-sans text-2xl font-bold text-white mb-2">Inquiry Forwarded to WhatsApp!</h3>
+                  <p className="text-brand-muted text-sm leading-relaxed max-w-md mx-auto mb-8">
+                    Your project details have been formatted and dispatched directly to our WhatsApp line (<strong className="text-white">+91 98764 67697</strong>). We will respond to your requirements right away.
                   </p>
-                  <button
-                    onClick={() => setStatus("idle")}
-                    className="inline-flex items-center justify-center rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
-                  >
-                    Send Another Message
-                  </button>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                    {lastWhatsAppUrl && (
+                      <a
+                        href={lastWhatsAppUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 px-6 py-3 text-sm font-semibold text-emerald-300 hover:bg-emerald-500/30 transition-all duration-200"
+                      >
+                        <WhatsAppIcon className="h-4 w-4" />
+                        <span>Open WhatsApp Again</span>
+                      </a>
+                    )}
+                    <button
+                      onClick={() => setStatus("idle")}
+                      className="inline-flex items-center justify-center rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -254,24 +304,29 @@ export default function ContactPage() {
                   {/* Action CTA */}
                   <button
                     type="submit"
-                    className="w-full relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary to-brand-highlight py-4 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(91,91,255,0.3)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:scale-100"
+                    className="w-full relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 via-brand-primary to-brand-highlight py-4 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,245,212,0.35)] hover:scale-[1.01] active:scale-[0.98] disabled:opacity-50 disabled:scale-100"
                     disabled={status === "loading"}
                   >
                     {status === "loading" ? (
                       <>
                         <Loader2 className="h-4 w-4 animate-spin text-white" />
-                        <span>Dispatching Request...</span>
+                        <span>Connecting to WhatsApp...</span>
                       </>
                     ) : (
                       <>
-                        <span>Submit Project Brief</span>
-                        <Send className="h-4 w-4" />
+                        <WhatsAppIcon className="h-4 w-4" />
+                        <span>Send Project Brief via WhatsApp</span>
                       </>
                     )}
                   </button>
 
+                  <div className="flex items-center justify-center gap-2 text-[11px] text-brand-muted">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Inquiries forward directly to +91 98764 67697 for immediate response</span>
+                  </div>
+
                   {status === "error" && (
-                    <p className="text-xs text-red-400 text-center">Please verify that all required inputs are correct.</p>
+                    <p className="text-xs text-red-400 text-center">Please verify that all required inputs are filled out.</p>
                   )}
                 </form>
               )}
