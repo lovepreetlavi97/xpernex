@@ -7,7 +7,6 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import TechStack from "@/components/home/TechStack";
 import Process from "@/components/home/Process";
 import PortfolioPreview from "@/components/home/PortfolioPreview";
-import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import ContactCallout from "@/components/home/ContactCallout";
 
@@ -32,7 +31,6 @@ export default function Home() {
       <TechStack />
       <Process />
       <PortfolioPreview />
-      <Testimonials />
       <FAQ />
       <ContactCallout />
     </div>
