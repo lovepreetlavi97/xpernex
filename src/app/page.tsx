@@ -23,7 +23,7 @@ export default function Home() {
       <ScrollTextReveal 
         title="Who We Are"
         tagline="Experts for the Next Generation."
-        paragraph="We are a leading engineering team specializing in high-throughput Value Added Services (VAS). We build carrier-grade SMS gateways, direct billing solutions, and interactive USSD platforms. By connecting core telecommunication protocols with modern cloud pipelines, we deliver scalable subscription architectures for global networks."
+        paragraph="We are a leading engineering team specializing in high-throughput distributed systems and intelligent enterprise software. We build resilient cloud architectures, custom AI pipelines, and mission-critical applications. By connecting cutting-edge machine learning models with modern cloud infrastructure, we deliver scalable solutions for global organizations."
         ctaText="Read Our Full Story"
         ctaHref="/about"
       />

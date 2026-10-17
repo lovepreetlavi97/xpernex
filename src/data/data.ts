@@ -65,31 +65,6 @@ export interface TeamMember {
 
 export const servicesData: Service[] = [
   {
-    slug: "vas",
-    title: "VAS (Value Added Services)",
-    description: "Developing high-throughput mobile integrations, SMS gateways, and telecom microservices.",
-    iconName: "Smartphone",
-    fullDescription: "Xpernex designs and delivers carrier-grade Value Added Services (VAS) architectures. We construct high-throughput SMS gateways, USSD messaging platforms, direct carrier billing (DCB) integrations, and mobile subscription middleware. Our solutions are engineered for sub-millisecond dispatch times and absolute fault tolerance, ensuring massive transaction handling under peak telecom loads.",
-    features: [
-      "High-performance SMS/MMS gateway APIs & SMTP integrations",
-      "USSD menu orchestrations and interactive response scripts",
-      "Direct Carrier Billing (DCB) & subscription ledger middleware",
-      "Real-time mobile content delivery pipelines",
-      "SMPP protocol connections and load-balanced traffic routing"
-    ],
-    process: [
-      { step: "01", title: "Protocol Integration", desc: "Setting up secure SMPP, HTTP, and carrier core API connections." },
-      { step: "02", title: "Routing Architecture", desc: "Designing load balancers and queues to sustain peak message volumes." },
-      { step: "03", title: "Ledger Setup", desc: "Configuring atomic transactions for direct billing and ledger tracking." },
-      { step: "04", title: "Load Validation", desc: "Simulating heavy traffic spikes to verify carrier gateway SLA limits." }
-    ],
-    metrics: [
-      { label: "Dispatch Speed", value: "<15ms" },
-      { label: "Throughput Capacity", value: "85k/sec" },
-      { label: "Delivery SLA Ratio", value: "99.999%" }
-    ]
-  },
-  {
     slug: "artificial-intelligence",
     title: "Artificial Intelligence",
     description: "Architecting generative AI pipelines, specialized LLM fine-tuning, and cognitive automation systems.",

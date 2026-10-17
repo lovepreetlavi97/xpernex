@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = getSEOMetadata({
   title: "Our Services | Enterprise Software & AI",
-  description: "Explore our 13 specialized services including VAS, Artificial Intelligence, Cloud Solutions, DevOps, Web and Mobile apps engineering.",
+  description: "Explore our 12 specialized services including Artificial Intelligence, Cloud Solutions, DevOps, Web and Mobile apps engineering.",
   path: "/services"
 });
 
